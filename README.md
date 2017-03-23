@@ -1,6 +1,6 @@
-acl-editors
+ansible-netops
 ===========
 
-NetDevOps Method of updating ACLs.
+Playbooks for managing networks.
 
 #Note: this is a work in progress
