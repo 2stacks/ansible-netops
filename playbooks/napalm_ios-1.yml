@@ -1,0 +1,16 @@
+---
+
+- name: Test NAPALM on IOS
+  hosts: cisco
+
+  tasks:
+    - name: Gen .diff file (discard change)
+      napalm_install_config: 
+            hostname: "{{ host }}"
+            username: "{{ username }}"
+            password: "{{ password }}"
+            dev_os: "{{ dev_os }}"
+            config_file: initial.conf
+            commit_changes: False
+            replace_config: True
+            diff_file: initial.diff

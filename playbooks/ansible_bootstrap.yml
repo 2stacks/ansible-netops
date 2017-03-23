@@ -1,0 +1,17 @@
+---
+
+- name: Boostrap IOSXR
+  hosts: iosxr
+  vars: 
+    iosxr_cmds: "{{ lookup('file', 'commands/iosxrcommands.txt') }}"
+  gather_facts: no
+
+  tasks:
+  - name: configure xml ttl
+    iosxr_config:
+      host: "{{ inventory_hostname }}"
+      provider:
+        username: cisco
+        password: cisco
+      lines: "{{ iosxr_cmds }}"
+      backup: yes

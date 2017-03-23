@@ -1,0 +1,16 @@
+---
+
+- name: Test NAPALM on IOS (r1)
+  hosts: cisco
+
+  tasks:
+    - name: Add ACL to csr1000v-01
+      napalm_install_config:
+            hostname: "{{ host }}"
+            username: "{{ username }}"
+            password: "{{ password }}"
+            dev_os: "{{ dev_os }}"
+            config_file: ./configs/csr1000v-01.conf
+            commit_changes: True
+            replace_config: True
+            diff_file: ./configs/csr1000v-01.diff
