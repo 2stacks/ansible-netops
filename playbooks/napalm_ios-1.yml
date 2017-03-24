@@ -13,4 +13,4 @@
             config_file: initial.conf
             commit_changes: False
             replace_config: True
-            diff_file: initial.diff
+            diff_file: initial.dif
