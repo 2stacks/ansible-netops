@@ -1,2 +1,0 @@
-xml agent tty
-xml agent tty iteration off

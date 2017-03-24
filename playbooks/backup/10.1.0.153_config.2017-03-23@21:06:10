@@ -1,0 +1,26 @@
+
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Fri Mar 24 01:05:03 2017 by ********
+!
+hostname ciosxr-01
+domain name lab.local
+interface MgmtEth0/0/CPU0/0
+ ipv4 address 10.1.0.153 255.255.255.0
+!
+interface GigabitEthernet0/0/0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/1
+ shutdown
+!
+interface GigabitEthernet0/0/0/2
+ shutdown
+!
+router static
+ address-family ipv4 unicast
+  0.0.0.0/0 10.1.0.1
+ !
+!
+ssh server v2
+end
