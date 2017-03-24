@@ -1,0 +1,6 @@
+---
+# file: inventories/production/group_vars/all
+
+username: admin
+password: P@ssw0rd!
+ansible_connection: local

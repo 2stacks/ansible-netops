@@ -1,0 +1,20 @@
+# file: inventories/production/hosts
+
+[ios]
+10.1.0.151 alias=vios-01
+
+[nxos]
+10.1.0.152 alias=cnxos-01
+
+[iosxr]
+10.1.0.153 alias=ciosxr-01
+
+[junos]
+10.1.0.154 alias=junos-01
+
+# group for all devices
+[devices:children]
+ios
+nxos
+iosxr
+junos
