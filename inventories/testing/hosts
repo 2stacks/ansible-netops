@@ -1,4 +1,4 @@
-# file: inventories/production/hosts
+# file: inventories/testing/hosts
 
 [ios]
 10.1.0.151 alias=vios-01

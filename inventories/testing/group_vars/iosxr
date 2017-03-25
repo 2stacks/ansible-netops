@@ -1,5 +1,5 @@
 ---
-# file: inventories/production/group_vars/iosxr
+# file: inventories/testing/group_vars/iosxr
 
 dev_os: iosxr
 username: cisco

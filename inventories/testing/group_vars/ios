@@ -1,4 +1,4 @@
 ---
-# file: inventories/production/group_vars/ios
+# file: inventories/testing/group_vars/ios
 
 dev_os: ios

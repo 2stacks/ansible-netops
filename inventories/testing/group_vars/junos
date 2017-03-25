@@ -1,4 +1,4 @@
 ---
-# file: inventories/production/group_vars/junos
+# file: inventories/testing/group_vars/junos
 
 dev_os: junos

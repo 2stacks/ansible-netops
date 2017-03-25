@@ -1,4 +1,4 @@
 ---
-# file: inventories/production/group_vars/nxos
+# file: inventories/testing/group_vars/nxos
 
 dev_os: nxos

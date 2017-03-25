@@ -1,6 +1,6 @@
 ---
 
-- name: Get IOS Facts with NAPALM
+- name: Get Facts with NAPALM
   hosts: all
 
   tasks:
