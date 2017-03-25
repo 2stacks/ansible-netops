@@ -1,0 +1,4 @@
+file prompt quiet
+archive
+  path flash:archive
+    write-memory

@@ -1,0 +1,52 @@
+---
+
+- name: Boostrap IOSXR devices for NAPLAM
+  hosts: iosxr
+  vars: 
+    iosxr_cmds: "{{ lookup('file', '{{ inventory_dir }}/commands/napalm-bootstrap/iosxr_cmds.txt') }}"
+  gather_facts: no
+
+  tasks:
+  - name: iosxr tasks
+    iosxr_config:
+      host: "{{ inventory_hostname }}"
+      provider:
+        username: "{{ username }}"
+        password: "{{ password }}"
+      lines: "{{ iosxr_cmds }}"
+      backup: yes
+
+- name: Boostrap NXOS devices for NAPLAM
+  hosts: nxos
+  vars: 
+    nxos_cmds: "{{ lookup('file', '{{ inventory_dir }}/commands/napalm-bootstrap/nxos_cmds.txt') }}"
+  gather_facts: no
+
+  tasks:
+  - name: nxos tasks
+    nxos_config:
+      host: "{{ inventory_hostname }}"
+      provider:
+        username: "{{ username }}"
+        password: "{{ password }}"
+      lines: "{{ nxos_cmds }}"
+      backup: yes
+      save: yes
+
+- name: Boostrap IOS devices for NAPLAM
+  hosts: ios
+  vars: 
+    ios_cmds: "{{ lookup('file', '{{ inventory_dir }}/commands/napalm-bootstrap/ios_cmds.txt') }}"
+  gather_facts: no
+
+  tasks:
+  - name: ios tasks
+    ios_config:
+      host: "{{ inventory_hostname }}"
+      provider:
+        username: "{{ username }}"
+        password: "{{ password }}"
+      lines: "{{ ios_cmds }}"
+      backup: yes
+      save: yes
+      timeout: 20
