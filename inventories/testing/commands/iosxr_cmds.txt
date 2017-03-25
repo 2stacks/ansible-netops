@@ -1,0 +1,5 @@
+domain name lab.local
+domain lookup disable
+banner motd $ THIS IS A TEST $
+ssh server v2
+line default transport input ssh

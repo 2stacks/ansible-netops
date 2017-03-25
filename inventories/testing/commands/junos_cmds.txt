@@ -1,0 +1,4 @@
+set system domain-name lab.local
+set system login message "This Is A Test"
+set system services ssh root-login deny
+set system services ssh protocol-version v2

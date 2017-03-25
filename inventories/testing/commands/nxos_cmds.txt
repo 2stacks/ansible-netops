@@ -1,0 +1,6 @@
+ip domain-name lab.local
+banner motd $ THIS IS A TEST $
+ssh login-attempts 3
+no ip domain-lookup
+line vty
+ exec-timeout 60

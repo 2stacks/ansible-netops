@@ -1,0 +1,71 @@
+---
+
+- name: Configure IOSXR
+  hosts: iosxr
+  vars: 
+    iosxr_cmds: "{{ lookup('file', '{{ inventory_dir }}/commands/iosxr_cmds.txt') }}"
+  gather_facts: no
+
+  tasks:
+  - name: iosxr tasks
+    iosxr_config:
+      host: "{{ inventory_hostname }}"
+      provider:
+        username: "{{ username }}"
+        password: "{{ password }}"
+      lines: "{{ iosxr_cmds }}"
+      backup: yes
+
+- name: Configure NXOS
+  hosts: nxos
+  vars: 
+    nxos_cmds: "{{ lookup('file', '{{ inventory_dir }}/commands/nxos_cmds.txt') }}"
+  gather_facts: no
+
+  tasks:
+  - name: nxos tasks
+    nxos_config:
+      host: "{{ inventory_hostname }}"
+      provider:
+        username: "{{ username }}"
+        password: "{{ password }}"
+      lines: "{{ nxos_cmds }}"
+      backup: yes
+      save: yes
+
+- name: Configure IOS
+  hosts: ios
+  vars: 
+    ios_cmds: "{{ lookup('file', '{{ inventory_dir }}/commands/ios_cmds.txt') }}"
+  gather_facts: no
+
+  tasks:
+  - name: ios tasks
+    ios_config:
+      host: "{{ inventory_hostname }}"
+      provider:
+        username: "{{ username }}"
+        password: "{{ password }}"
+      lines: 
+        - file prompt quiet
+        - "{{ ios_cmds }}"
+      backup: yes
+      save: yes #requires 'file prompt quiet'
+      timeout: 20
+
+- name: Configure JUNOS
+  hosts: junos
+  vars: 
+    junos_cmds: "{{ lookup('file', '{{ inventory_dir }}/commands/junos_cmds.txt') }}"
+  gather_facts: no
+
+  tasks:
+  - name: junos tasks
+    junos_config:
+      #requires 'set system services netconf ssh'
+      provider:
+        username: "{{ username }}"
+        password: "{{ password }}"
+      host: "{{ inventory_hostname }}"
+      lines: "{{ junos_cmds }}"
+      backup: yes
