@@ -1,9 +1,9 @@
 ---
 
-- name: Boostrap IOSXR devices for NAPLAM
+- name: Remove NAPALM Boostrap for IOSXR devices
   hosts: iosxr
   vars: 
-    iosxr_cmds: "{{ lookup('file', '{{ inventory_dir }}/commands/napalm-bootstrap/iosxr_cmds.txt') }}"
+    iosxr_cmds: "{{ lookup('file', '{{ inventory_dir }}/commands/napalm-bootstrap/iosxr_rmcmds.txt') }}"
   gather_facts: no
 
   tasks:
@@ -16,10 +16,10 @@
       lines: "{{ iosxr_cmds }}"
       backup: yes
 
-- name: Boostrap NXOS devices for NAPLAM
+- name: Remove NAPALM Boostrap for NXOS devices
   hosts: nxos
   vars: 
-    nxos_cmds: "{{ lookup('file', '{{ inventory_dir }}/commands/napalm-bootstrap/nxos_cmds.txt') }}"
+    nxos_cmds: "{{ lookup('file', '{{ inventory_dir }}/commands/napalm-bootstrap/nxos_rmcmds.txt') }}"
   gather_facts: no
 
   tasks:
@@ -33,10 +33,10 @@
       backup: yes
       save: yes
 
-- name: Boostrap IOS devices for NAPLAM
+- name: Remove NAPALM Boostrap for IOS devices
   hosts: ios
   vars: 
-    ios_cmds: "{{ lookup('file', '{{ inventory_dir }}/commands/napalm-bootstrap/ios_cmds.txt') }}"
+    ios_cmds: "{{ lookup('file', '{{ inventory_dir }}/commands/napalm-bootstrap/ios_rmcmds.txt') }}"
   gather_facts: no
 
   tasks:
