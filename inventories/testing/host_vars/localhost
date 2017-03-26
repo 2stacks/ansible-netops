@@ -1,0 +1,4 @@
+---
+# file: inventories/testing/host_vars/localhost
+
+ansible_connection: local
