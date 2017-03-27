@@ -3,7 +3,7 @@ ansible-netops
 
 Playbooks for managing networks.
 
-#Note: this is a work in progress
+#Note: this is a work in progress.  Currently supports IOS, NXOS, IOSXR and JUNOS.
 
 Requires:
 	
